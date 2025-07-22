@@ -163,7 +163,7 @@ public class Imperium : BaseUnityPlugin
         // Settings = new ImpSettings(configFile);
 
         // Register camera update when scene is loaded
-        ActiveCamera = new ImpExternalBinding<Camera, bool>(() => PlayerAvatar.instance.localCamera, IsLevelLoaded);
+        ActiveCamera = new ImpExternalBinding<Camera, bool>(() => Camera.main, IsLevelLoaded);
 
         IO.BindNotificationSettings(Settings);
         Networking.BindAllowClients(Settings.Preferences.AllowClients);
